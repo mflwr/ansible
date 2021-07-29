@@ -1,6 +1,7 @@
-- name: Add user
+- name: Create my user
   user: 
     name: mark
+    state: present
     shell: /bin/bash
 
 - name: Add ssh keys  
