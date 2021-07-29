@@ -1,0 +1,10 @@
+- name: Add user
+  user: 
+    name: mark
+    shell: /bin/bash
+
+- name: Add ssh keys  
+  authorized_key:
+    user: mark
+    state: present
+    key: https://github.com/mflwr.keys
