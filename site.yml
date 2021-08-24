@@ -1,5 +1,13 @@
-- name: Configure all hosts
+- name: Apply common role
   hosts: all
-
+  become: true
+  
   roles:
     - common
+
+- name: Apply docker role
+  hosts: sites
+  become: true
+
+  roles:
+    - docker
