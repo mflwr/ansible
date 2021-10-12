@@ -4,7 +4,6 @@
     shell: /bin/bash
     groups:
       - sudo
-      - mark
 
 - name: Add ssh keys  
   authorized_key:
