@@ -23,3 +23,10 @@
   apt:
     name: docker-ce
     cache_valid_time: 86400
+    
+- name: Add user to group docker
+  user: 
+    name: mark
+    shell: /bin/bash
+    groups:
+      - docker
