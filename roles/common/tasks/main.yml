@@ -5,7 +5,6 @@
     groups:
       - sudo
       - mark
-      - docker
 
 - name: Add ssh keys  
   authorized_key:
