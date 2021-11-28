@@ -1,13 +1,18 @@
 - name: Apply common role
   hosts: all
   become: true
-  
+
   roles:
     - common
 
 - name: Apply docker role
   hosts: sites
   become: true
-
   roles:
     - docker
+
+- name: Apply Java 17 role
+  hosts: java
+  become: true
+  roles:
+    - java
