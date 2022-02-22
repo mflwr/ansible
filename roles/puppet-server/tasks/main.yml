@@ -1,0 +1,25 @@
+- name: Ensure dependencies are installed.
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - gnupg2
+      - xz-utils
+    state: present
+
+- name: Add Puppet Labs repository
+  apt:
+    deb: "https://apt.puppetlabs.com/puppet7-release-focal.deb"
+    state: present
+  register: puppet_apt_deb_install
+
+- name: Install Puppet Server
+  apt:
+    name: puppetserver
+    update_cache: yes
+
+- name: Ensure Puppet service is started and enabled at boot.
+  service:
+    name: "puppetserver"
+    state: started
+    enabled: true

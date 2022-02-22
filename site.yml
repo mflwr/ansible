@@ -1,18 +1,33 @@
-- name: Apply common role
-  hosts: all
-  become: true
-
-  roles:
-    - common
-
+#- name: Apply common role
+#  hosts: all
+#  become: true
+#
+#  roles:
+#    - common
+#
 - name: Apply docker role
   hosts: sites
   become: true
   roles:
     - docker
+#
+#- name: Apply Java 11 role
+#  hosts: java17
+#  become: true
+#  roles:
+#    - java11
+#
 
-- name: Apply Java 17 role
-  hosts: java
-  become: true
-  roles:
-    - java
+# - name: Apply Java 17 role
+#   hosts: java17
+#   become: true
+#   roles:
+#     - java17
+
+# - name: Apply Puppet Server role
+#  hosts: puppet_server
+#  become: true
+#  roles:
+#    - common
+#    - java11
+#    - puppet-server
